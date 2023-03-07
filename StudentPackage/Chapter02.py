@@ -23,7 +23,33 @@ b = [5,2,3,1,4]
 b.insert(1,7)
 print(b)
 
+b = [5,2,3,1,4]
+print('b : ' , b.remove(2),b)
+
+# b = [5,2,3,1,4]
+# print('b : ' , b.remove[2],b)
+
+b = [5,2,3,1,4]
+b.insert(1,7)
+print(b)
+
+
+print()
 b= [5,2,3,1,4]
 del b[2]
 print(b)
+
+b= [5,2,3,1,4]
+print(b.pop())
+print(b.pop())
+print(b.pop())
+print(b.pop())
+print(b.pop())
+
+
+b = [5,2,3,1,4,7,8,9]
+while b:
+    data = b.pop()
+    print(data)
+
 
