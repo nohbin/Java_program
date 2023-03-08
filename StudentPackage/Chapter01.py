@@ -1,3 +1,5 @@
+#  Python basic
+
 s = "this is python"
 
 
@@ -25,7 +27,3 @@ print(f"{s}.upper () : {r2}")
 r2 = s.lower()
 print(f"{s}.lower() : {r2}")
 
-myList = [1, 1.25, 1, 'word', [1, 2, [3,4]]]
-
-print(myList)
-print(myList[4])
