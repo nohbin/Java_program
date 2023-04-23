@@ -12,14 +12,19 @@ public class Product implements Serializable {
 	private String manufacturer;	// 제조사
 	private String category;		// 분류
 	private long unitInstock;		// 재고수
-	private String condition;		//신품,중고품,재생품
+	private String condition;		// 신품,중고품,재생품
+	private String filename;		// 이미지 파일명
+	
 	
 	public Product() {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+
 	public Product(String productId, String pname, Integer unitPrice, String description, String manufacturer,
-			String category, long unitInstock, String condition) {
+			String category, long unitInstock, String condition, String filename) {
+		super();
 		this.productId = productId;
 		this.pname = pname;
 		this.unitPrice = unitPrice;
@@ -28,11 +33,26 @@ public class Product implements Serializable {
 		this.category = category;
 		this.unitInstock = unitInstock;
 		this.condition = condition;
+		this.filename = filename;
 	}
+
+
 
 	public String getProductId() {
 		return productId;
 	}
+
+	public String getFilename() {
+		return filename;
+	}
+
+
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+
 
 	public void setProductId(String productId) {
 		this.productId = productId;

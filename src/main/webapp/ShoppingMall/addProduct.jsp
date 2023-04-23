@@ -11,14 +11,13 @@
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
-
-<jsp:include page="./menu.jsp"></jsp:include> 
+</head>
+<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session"></jsp:useBean>
+</head>
 <%-- <%@ include file = "./menu.jsp" %> --%>
 
 
-<jsp:useBean id="productDAO" class="dao.ProductRepository"
-	scope="session"></jsp:useBean>
-	
+	<jsp:include page="./menu.jsp"></jsp:include>
 <div class="container">
 	<h1 class="display-3">상품 등록</h1>
 </div>
@@ -26,51 +25,53 @@
 
 <body>
 	<div class = "container">
-		<form name = "newProduct" action="processAddProduct.jsp" method="post">
-			<div class = "form-group row">
+		<form name = "newProduct" action="processAddProduct.jsp" method="post"
+		class="form-horizontal"
+		enctype="multipart/form-data" >
+			<div class = "form-group row" style = "padding: 10px">
 				<label class = "col-sm-2">상품코드</label>
 				<div class = 'col-sm-3'>
 					<input type = "text" name = "productId" class = "form-control">
 				</div>
 			</div>
-			<div class = "form-group row">
+			<div class = "form-group row" style = "padding: 10px">
 				<label class = "col-sm-2">상품명</label>
 				<div class = 'col-sm-3'>
 					<input type = "text" name = "productName" class = "form-control">
 				</div>
 			</div>
-			<div class = "form-group row">
+			<div class = "form-group row" style = "padding: 10px">
 				<label class = "col-sm-2">가격</label>
 				<div class = 'col-sm-3'>
 					<input type = "text" name = "unitPrice" class = "form-control">
 				</div>
 			</div>
 			
-			<div class = "form-group row">
+			<div class = "form-group row" style = "padding: 10px">
 				<label class = "col-sm-2">제조사</label>
 				<div class = 'col-sm-3'>
 					<input type = "text" name = "manufacturer" class = "form-control">
 				</div>
 			</div>
-			<div class = "form-group row">
+			<div class = "form-group row" style = "padding: 10px">
 				<label class = "col-sm-2">분류</label>
 				<div class = 'col-sm-3'>
 					<input type = "text" name = "category" class = "form-control">
 				</div>
 			</div>
-			<div class = "form-group row">
+			<div class = "form-group row" style = "padding: 10px">
 				<label class = "col-sm-2">재고량</label>
 				<div class = 'col-sm-3'>
-					<input type = "text" name = "unitInstock" class = "form-control">
+					<input type = "text" name = "unitInStock" class = "form-control">
 				</div>
 			</div>
-			<div class = "form-group row">
+			<div class = "form-group row" style = "padding: 10px">
 				<label class = "col-sm-2">상세정보</label>
 				<div class = 'col-sm-5'>
 					<textarea name = 'description'rows="2" cols="50" class = 'form-control'></textarea>
 				</div>
 			</div>
-			<div class = "form-group row">
+			<div class = "form-group row" style = "padding: 10px">
 				<label class = "col-sm-2">상태</label>
 				<div class = 'col-sm-5'>
 					<input type = "radio" name = "condition" value="new" checked="checked">A급
@@ -78,13 +79,22 @@
 					<input type = "radio" name = "condition" value="refurb">Refurb
 				</div>
 			</div>
-			<div class = "form-group row">
+			<div class = "form-group row" style = "padding: 10px">
+				<label class= "col-sm-2">이미지</label>
+				<div class = 'col-sm-5'>
+					<input type = "file" name = "productImage" class = "form-control">
+				</div>
+			</div>
+			
+			<div class = "form-group row" style = "padding: 10px">
 				<div class = 'col-sm-offset-2 col_sm-10'>
 					<input type = "submit" class = "btn btn-primary" value = "등록">
 				</div>
 			</div>
 		</form>
 	</div>	
+	
+	
 
 
 

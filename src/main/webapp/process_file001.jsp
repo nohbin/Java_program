@@ -17,6 +17,7 @@
 </head>
 <body>
 <%
+	request.setCharacterEncoding("UTF-8");
 	String fileUploadPath = "c://upload";
 	DiskFileUpload upload = new DiskFileUpload();
 	List items = upload.parseRequest(request);	
@@ -25,10 +26,12 @@
 		FileItem item =  (FileItem)params.next();
 		if(item.isFormField()){
 			String title = item.getString("UTF-8");
-			out.print("<h3>"+title+"</h3>");
+			out.print("<h3>타이틀 : "+title+"</h3>");
 		}else{
 			String fileName = item.getName();
-			out.print("<br>"+fileName);
+			File file = new File(fileUploadPath + "/" + fileName);
+			item.write(file);
+			out.print("<br>파일명 : "+ fileName);
 		}
 	}
 %>

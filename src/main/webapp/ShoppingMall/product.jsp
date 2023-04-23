@@ -26,7 +26,10 @@
 		<h1 class="display-3">상품 정보</h1>
 	</div>
 	<div class="container">
-		<div class="row" align='center'>
+		<div class="row">
+			<div class = "col-md-5">
+				<img alt="" src="../resources/images/<%=p.getFilename()%>" style = "width:100%">
+			</div>
 			<div class="col-md-6">
 				<p>상품명 :	<%= p.getPname()%>
 				<p>설명 :	<%= p.getDescription()%>
@@ -34,6 +37,10 @@
 				<p>제조사 :	<%= p.getManufacturer()%>
 				<p>분류 :	<%= p.getCategory()%>
 				<p>재고 수 :	<%= p.getUnitInstock()%>
+				<p>상태 : 	<%= p.getCondition() %>
+				<p><h4><%=p.getUnitPrice() %> 원</h4>
+				<p><a href = "#" class = "btn btn-info">상품 주문</a>
+				<a href = "#" class = "btn btn-secondary">상품 목록</a>
 			</div>
 		</div>
 	</div>

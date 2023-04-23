@@ -32,11 +32,12 @@
 				Product p =  listofProducts.get(i);			
 			%>
 			<div class="col-md-4">
+				<img alt="" src="../resources/images/<%=p.getFilename()%>" style = "width:100%">
 				<h3><%=p.getPname() %></h3>
 				<p><%=p.getDescription() %></p>
 				<p><%=p.getUnitPrice()%>원</p>
-				<p><a href="./product.jsp?id=<%=p.getProductId()%>"
-						class="btn btn-secondary" role="button">상세정보 &raquo;</a>
+				<p><a href="./product.jsp?id=<%=p.getProductId()%>" 
+				class="btn btn-secondary" role="button">상세정보 &raquo;</a>
 			</div>			
 			<%
 			}
